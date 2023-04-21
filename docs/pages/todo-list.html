@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../assets/css/main.css">
+
+    <link rel="stylesheet" href="./../assets/css/todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poiret+One&family=Righteous&display=swap" rel="stylesheet">
+    <title>Todolist</title>
+</head>
+<body>
+<div class="container">
+    <h1>Todo liste</h1>
+    <div class="action-buttons">
+        <input type="text" id="new-task" placeholder="Nom de la tâche">
+        <button id="add-task-btn"><i class="fas fa-plus"></i> Ajouter une tâche
+    </div>
+    <hr>
+    <ul id="task-list">
+        <!-- Liste des tâches ajoutées -->
+    </ul>
+
+    <div class="action-buttons">
+        <button id="delete-done-btn" class="btn-delete"><i class="fas fa-trash"></i> Supprimer les tâches terminées</button>
+    </div>
+    <fieldset class="action-buttons">
+        <input type="text" id="save-name" placeholder="Nom de la sauvegarde">
+        <button id="save-btn" class="data">Sauvegarder</button>
+    </fieldset>
+
+    <fieldset class="action-buttons">
+        <legend>Charger une sauvegarde :</legend>
+        <select id="load-name"></select>
+        <button class="button data" id="load-btn">Charger</button>
+    </fieldset>
+</div>
+<script>
+    const taskList = document.getElementById('task-list');
+    const addTaskBtn = document.getElementById('add-task-btn');
+    const newTaskInput = document.getElementById('new-task');
+    const deleteDoneBtn = document.getElementById('delete-done-btn');
+    const saveNameInput = document.getElementById('save-name');
+    const saveBtn = document.getElementById('save-btn');
+    const loadNameSelect = document.getElementById('load-name');
+    const loadBtn = document.getElementById('load-btn');
+
+    let tasks = [];
+
+    function renderTasks() {
+        taskList.innerHTML = '';
+
+        for (let i = 0; i < tasks.length; i++) {
+            const task = tasks[i];
+            const li = document.createElement('li');
+            li.className='task-item';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = task.done;
+            checkbox.addEventListener('change', () => {
+                task.done = checkbox.checked;
+                saveTasks();
+            });
+
+            const span = document.createElement('span');
+            span.textContent = task.name;
+
+            const editBtn = document.createElement('button');
+            editBtn.className = 'btn-edit';
+            editBtn.innerHTML = '<i class="fas fa-edit"></i>';
+
+            editBtn.addEventListener('click', () => {
+                const name = prompt('Modifier la tâche', task.name);
+
+                if (name) {
+                    task.name = name;
+                    saveTasks();
+                    renderTasks();
+                }
+            });
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'btn-delete';
+            deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+            deleteBtn.addEventListener('click', () => {
+                tasks.splice(i, 1);
+                saveTasks();
+                renderTasks();
+            });
+
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(editBtn);
+            li.appendChild(deleteBtn);
+
+            taskList.appendChild(li);
+        }
+    }
+
+    function addTask() {
+        const name = newTaskInput.value.trim();
+
+        if (name) {
+            tasks.push({ name, done: false });
+            saveTasks();
+            renderTasks();
+            newTaskInput.value = '';
+        }
+    }
+
+    function deleteDoneTasks() {
+        tasks = tasks.filter(task => !task.done);
+        saveTasks();
+        renderTasks();
+    }
+
+    function saveTasks() {
+        const name = saveNameInput.value.trim();
+
+        if (name) {
+            localStorage.setItem(name, JSON.stringify(tasks));
+            populateLoadNames();
+        }
+    }
+
+    function loadTasks() {
+        const name = loadNameSelect.value;
+        const tasksJSON = localStorage.getItem(name);
+
+        if (tasksJSON) {
+            tasks = JSON.parse(tasksJSON);
+            renderTasks();
+        }
+    }
+
+    function populateLoadNames() {
+        loadNameSelect.innerHTML = '';
+
+        for (let i = 0;i < localStorage.length;i++) {
+                const name = localStorage.key(i);
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                loadNameSelect.appendChild(option);
+            }
+        }
+
+        addTaskBtn.addEventListener('click', addTask);
+        deleteDoneBtn.addEventListener('click', deleteDoneTasks);
+        saveBtn.addEventListener('click', saveTasks);
+
+        loadBtn.addEventListener('click', loadTasks);
+
+        populateLoadNames();
+    </script>

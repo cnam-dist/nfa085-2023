@@ -5,11 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poiret+One&family=Righteous&display=swap" rel="stylesheet">
     <title>nfa085</title>
 </head>
 <body>
-<h1>Module Nfa085</h1>
+<h1>Ajouter un élément à une liste</h1>
 
+<input type="text" id="a"/>
+<input type="text" id="b"/>
+<input type="text" id="msg-input">
+<button id="bt-add">Addition</button>
+<script>
+    function addition(a, b) {
+        var nb1 = document.getElementById("a").value;
+        var nb2 = document.getElementById("b").value;
+        var resultat = parseInt(nb1) + parseInt(nb2);
+        console.log(resultat);
+    }
+    document.getElementById('bt-add').addEventListener('click',()=>addition());
+</script>
 </body>
 </html>
