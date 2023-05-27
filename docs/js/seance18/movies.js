@@ -6,7 +6,7 @@ const url = 'https://streaming-availability.p.rapidapi.com/v2/';
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'fA38srGBKkmsh37RZkhPJs1c1nTJp1A9yW8jsnjrCDBx5adbYo',
+        'X-RapidAPI-Key': 'your_api_key',
         'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
 };
@@ -14,8 +14,6 @@ const options = {
 //Variables globales
 //*************************************************************************
 let movies= [];
-
-const $=(id)=>document.getElementById(id);
 
 const genresColors = {
     'Action': 'bg-danger',
@@ -97,6 +95,9 @@ function getViewedMovies(){
 //*************************************************************************
 //Gestion des éléments du DOM
 //*************************************************************************
+
+const $=(id)=>document.getElementById(id);
+
 function isVisible(element) {
     const computedStyle = window.getComputedStyle(element);
     return computedStyle.display !== 'none';
@@ -138,7 +139,6 @@ function displayViewedCount(){
         return checkbox.checked ? total + 1 : total;
     }, 0);
 
-    $('count-bottom-info').style.display=viewedMoviesCount===0?'none':'flex';
     setToElementsByClassName('_viewedCount', viewedMoviesCount);
 }
 
