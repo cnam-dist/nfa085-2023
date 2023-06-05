@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple de page Web avec des balises sémantiques</title>
+  <link rel="stylesheet" href="../../assets/css/seance16/la-firme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <a href="" class="logo">La firme</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">À propos</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <article>
+      <h2>À propos de nous</h2>
+      <p>Nous sommes une entreprise spécialisée dans la création de pages Web.<br>Nous sommes passionnés par notre travail et nous nous efforçons toujours de fournir des services de qualité supérieure à nos clients.</p>
+    </article>
+
+    <section>
+      <img src="https://img.freepik.com/free-photo/standard-quality-control-collage-concept_23-2149595828.jpg?w=1800&t=st=1683567278~exp=1683567878~hmac=efbafa5781c10dabb2c90eedad0f43f808a7debff89640f07fa6fa737fe981cc" alt="Nos services" />
+      <div>
+        <h2>Nos services</h2>
+        <ul>
+          <li>Création de sites Web</li>
+          <li>Conception graphique</li>
+          <li>Référencement</li>
+          <li>Formation</li>
+        </ul>
+        </div>
+    </section>
+
+    <section>
+      <img src="https://img.freepik.com/free-photo/hand-that-holds-many-ideas-written-with-white-chalk-draw-concept_1150-19557.jpg?w=1800&t=st=1683567895~exp=1683568495~hmac=bcf066d5094ec0af3b9438b686fb61e1bb5bdbde72b7cb45f6657cf9fbfc1ca3" alt="Astuces" />
+      <div>
+        <h2>Comment créer une page Web</h2>
+        <p>Il existe de nombreuses façons de créer une page Web, mais voici quelques étapes de base :</p>
+        <ol>
+          <li>Définissez les objectifs de votre site Web</li>
+          <li>Concevez la structure de votre site Web</li>
+          <li>Créez le contenu de votre site Web</li>
+          <li>Concevez la mise en page de votre site Web à l'aide de CSS</li>
+          <li>Testez et déployez votre site Web</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Liens utiles</h2>
+    <ul>
+      <li><a href="#">Comment créer une page Web</a></li>
+      <li><a href="#">Les balises sémantiques en HTML</a></li>
+      <li><a href="#">Apprenez le CSS</a></li>
+      <li><a href="#">Référencement pour les nuls</a></li>
+    </ul>
+  </aside>
+
+  <footer>
+    <div class="footer-container">
+    <div itemscope itemtype="http://schema.org/LocalBusiness" class="col">
+      <h4 itemprop="name">La firme</h4>
+      <p itemprop="description">Conception web sur mesure</p>
+      <ul>
+      <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">123 rue Principale</span><br>
+        <span itemprop="postalCode">H1H 1H1</span> <span itemprop="addressLocality">Montréal</span>, <span itemprop="addressRegion">Québec</span>, <span itemprop="addressCountry">Canada</span>
+      </li>
+      <li itemprop="telephone">514-123-4567</li>
+        <li><a href="mailto:info@lafirme.com" itemprop="email">info@lafirme.com</a></li>
+        <li><a href="https://www.lafirme.com" itemprop="url">https://www.lafirme.com</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Informations légales</h4>
+      <ul>
+        <li><a href="#">A propos de nous</a></li>
+        <li><a href="#">Nos services</a></li>
+        <li><a href="#">Politique de confidentialité</a></li>
+        <li><a href="#">Programme d'affiliation</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Nous suivre</h4>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

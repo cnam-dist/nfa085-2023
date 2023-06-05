@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Exemple de mise en page avec Flexbox et media-queries</title>
+    <meta charset="utf-8">
+  <style>
+    /* Style pour le conteneur de grille */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    /* Style pour chaque élément de la grille */
+    .item {
+      flex-basis: calc(33.33% - 20px);
+      margin-bottom: 20px;
+      background-color: #eee;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Media-query pour les écrans de taille moyenne */
+    @media only screen and (max-width: 800px) {
+      .item {
+        flex-basis: calc(50% - 20px);
+      }
+    }
+
+    /* Media-query pour les écrans plus petits */
+    @media only screen and (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+      .item {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="item">Colonne 1</div>
+  <div class="item">Colonne 2</div>
+  <div class="item">Colonne 3</div>
+</div>
+</body>
+</html>

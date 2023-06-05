@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lorem ipsum sections ajustées</title>
+  <style>
+    /* Style de base pour tous les champs de formulaire */
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    /* styles pour les sections */
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem;
+      padding: 1rem;
+    }
+    section img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem;
+    }
+    section h2 {
+      margin-bottom: 1rem;
+    }
+    section p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    /* media-queries pour ajuster les sections */
+    @media screen and (min-width: 768px) {
+      /* ajustements pour les écrans de taille moyenne et plus grands */
+      section {
+        flex-direction: row;
+        text-align: left;
+        max-width: 1000px;
+        margin: 1rem auto;
+        padding: 1rem;
+      }
+      section:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      section img {
+        margin-bottom: 0;
+        margin-right: 2rem;
+      }
+      section h2 {
+        margin-bottom: 0.5rem;
+      }
+      section p {
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<section>
+  <h1>Lorem ipsum avec sections ajustées</h1>
+</section>
+<section>
+  <img src="https://via.placeholder.com/300x200.png?text=Section+1" alt="Section 1" />
+  <div>
+    <h2>Section 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed rutrum justo. Vivamus at nunc tortor. Mauris turpis lorem, euismod ac consectetur sed, rhoncus commodo risus. Maecenas vestibulum est sit amet nibh pulvinar vestibulum. Phasellus eu turpis porttitor, facilisis lacus quis, blandit nunc. Sed scelerisque maximus nisl, ut imperdiet arcu pulvinar ac. In vestibulum sollicitudin diam, a lacinia eros condimentum nec. Sed quis velit tellus. Cras tempus feugiat dui.</p>
+  </div>
+</section>
+<section>
+  <img src="https://via.placeholder.com/300x200.png?text=Section+2" alt="Section 2" />
+  <div>
+    <h2>Section 2</h2>
+    <p>Aenean pretium auctor commodo. Cras rhoncus fringilla lectus tincidunt sagittis. Integer rhoncus ante convallis posuere lacinia. Fusce lacus mi, lacinia nec tincidunt non, ullamcorper ut nulla. Morbi egestas malesuada sapien, ac molestie velit iaculis non. Ut orci turpis, euismod eu libero sit amet, hendrerit venenatis nisi. Vivamus varius mauris ut urna lacinia gravida.</p>
+  </div>
+</section>
+<section>
+  <img src="https://via.placeholder.com/300x200.png?text=Section+3" alt="Section 3" />
+  <div>
+    <h2>Section 3</h2>
+    <p>Mauris quis pellentesque nisi. Curabitur bibendum augue lectus, tempor pellentesque ligula placerat vitae. Ut rutrum consequat leo ut imperdiet. Nam tortor nulla, cursus sed porta pellentesque, aliquam non felis. Nam finibus lorem id justo tristique malesuada. Integer fermentum dictum nisi vitae vulputate. Pellentesque sagittis id neque eget accumsan.</p>
+  </div>
+</section>
+</body>
+</html>

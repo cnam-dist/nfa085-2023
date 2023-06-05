@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Page avec une image et un texte</title>
+    <meta charset="utf-8">
+    <style>
+        /* Style pour l'image */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style pour le texte */
+        p {
+            font-size: 40px;
+            line-height: 1.5;
+            margin: 40px;
+        }
+
+        /* Media-query pour les écrans plus petits */
+        @media only screen and (max-width: 800px) {
+            img {
+                max-width: 50%;
+                margin: auto;
+            }
+            p {
+                font-size: 20px;
+                line-height: 1;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<img src="https://via.placeholder.com/800x600" alt="Une image de test">
+<p>Voici un exemple de page avec une image et un texte. L'image est redimensionnée en fonction de la taille de l'écran en utilisant des media-queries.</p>
+</body>
+</html>
