@@ -1,0 +1,12 @@
+.markdown-toolbar {
+    margin-bottom: 10px;
+}
+#markdown-input {
+    height: 300px;
+}
+#markdown-output img{
+    max-width: 100px;
+}
+.field textarea {
+    max-height: none!important;
+}

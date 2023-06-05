@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulaire de Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui/dist/semantic.min.css">
+</head>
+<body>
+<div class="ui container">
+    <h1 class="ui dividing header">Votre inscription</h1>
+    <form class="ui form" id="testForm" novalidate>
+        <div class="two fields">
+            <div class="required field">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Nom" required>
+            </div>
+            <div class="required field">
+                <label>Prénom</label>
+                <input type="text" name="prenom" placeholder="Prénom">
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="fourteen wide required field">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="two wide field">
+                <label>Téléphone</label>
+                <input type="tel" name="telephone" placeholder="Téléphone">
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="required field">
+                <label>Mot de passe</label>
+                <input type="password" name="motdepasse" placeholder="Mot de passe">
+            </div>
+            <div class="required field">
+                <label>Confirmation du mot de passe</label>
+                <input type="password" name="confirmationMotdepasse" placeholder="Confirmation du mot de passe">
+            </div>
+        </div>
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="one">Informations privées</a>
+            <a class="item" data-tab="two">Informations de paiement</a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="one">
+            <div class="two fields">
+                <div class="two wide field">
+                    <label>Age</label>
+                    <input type="number" name="age" placeholder="age">
+                </div>
+                <div class="four wide field">
+                    <label>Genre</label>
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="gender">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Genre</div>
+                        <div class="menu">
+                            <div class="item" data-value="1">Homme</div>
+                            <div class="item" data-value="0">Femme</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="two">
+            <div class="ui grid">
+                <div class="eight wide column">
+                    <div class="grouped fields">
+                        <label>Moyen de paiement</label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="mp" checked="checked" value="visa" id="visa">
+                                <label for="visa">Visa</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="mp" value="visaElectron" id="visaElectron">
+                                <label for="visaElectron">Visa Electron</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="mp" value="mastercard" id="mastercard">
+                                <label for="mastercard">Mastercard</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="mp" value="amex" id="amex">
+                                <label for="amex">American Express</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="eight wide column">
+                    <div class="field">
+                        <label>Numéro de carte</label>
+                        <input type="text" name="carte" placeholder="Numéro de carte">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="required field">
+            <label>Vous nous avez connu par</label>
+            <div class="ui fluid search selection dropdown">
+                <input type="text" name="connuPar" placeholder="Sélectionnez ou ajoutez une option">
+                <i class="dropdown icon"></i>
+                <div class="default text">Sélectionnez ou ajoutez une option</div>
+                <div class="menu">
+                    <div class="item" data-value="internet">Internet</div>
+                    <div class="item" data-value="presse">Presse</div>
+                    <div class="item" data-value="reseauxSociaux">Réseaux sociaux</div>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <div class="required field">
+            <div class="ui checkbox">
+                <input type="checkbox" id="conditions" name="conditions" tabindex="0">
+                <label for="conditions">J'accepte les conditions d'utilisation.</label>
+            </div>
+        </div>
+        <button class="ui button primary" type="submit">Créer votre compte</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui/dist/semantic.min.js"></script>
+<script src="../../js/seance17/ui-signin.js"></script>
+</body>
+</html>
